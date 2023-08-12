@@ -1,27 +1,36 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-const YourApp = () => {
+const MeuApp = () => {
     return (
-        <View style={style.center}>
-            <Text>
-                <h1>
-                  Informações do aluno
-                </h1>
-                <p>
-                  <strong>Nome:</strong> Alan Alexandre Sampaio<br></br>
-                  <strong>Idade:</strong> 19 anos<br></br>
-                  <strong>Curso:</strong> Licenciatura em Computação<br></br>
-                  <strong>Faculdade:</strong> IFPI
-                </p>
-            </Text>
+        <View style={styles.center}>
+            <Text style = {styles.title}> Informações do aluno </Text>
+            <Text style = {styles.informacao}>Nome: Alan Alexandre Sampaio</Text>
+            <Text style = {styles.informacao}>Idade: 19 anos</Text>
+            <Text style = {styles.informacao}>Curso: Licenciatura em Computação</Text>
+            <Text style = {styles.informacao}>Faculdade: IFPI</Text>
         </View>
     );
 }
-const style = StyleSheet.create({
+const styles = ({
     center: {
-        flex: 1, justifyContent: "center", alignItems:
-            "center"   
-    },
+        flex: 1, 
+        justifyContent: "center",
+        backgroundColor: 'rgb(232, 232, 232)'
+},
+
+    title: {
+    fontSize: 20,
+    textAlign: 'center',
+    color: 'rgb(49, 49, 211)',
+    fontWeight: 'bold',
+},
+
+    informacao: {
+    fontSize: 15,
+    color: 'rgb(68, 68, 180)',
+    textAlign: 'start',
+
+},
 })
 
-export default YourApp;
+export default MeuApp;
