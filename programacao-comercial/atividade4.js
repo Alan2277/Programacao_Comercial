@@ -1,22 +1,26 @@
-import react from 'react';
 import {Text, View, StyleSheet, Image} from 'react-native';
+
+const Icone = ({nome, url}) =>{
+  return(
+    <View style = {styles.espacamento}>
+      <View style = {styles.preenchimento}>
+        <Image
+          style = {styles.figura}
+          source = {{uri: url}}
+        />
+      </View>
+      <Text>{nome}</Text>
+    </View>
+  )
+}
+
 
 export default App = () => {
   return(
     <View style = {styles.container}>
-      <View style = {styles.figura}>
-        <Image source= {{uri: 'https://cdn-icons-png.flaticon.com/128/3059/3059457.png'}}
-          style = {{width: 20, height: 20}}/>
-        <Image source= {{uri: 'https://cdn-icons-png.flaticon.com/128/2985/2985121.png'}}
-          style = {{width: 20, height: 20}}/>
-        <Image source= {{uri: 'https://cdn-icons-png.flaticon.com/128/3989/3989188.png'}}
-          style = {{width: 20, height: 20}}/>
-      </View>
-      <View style = {styles.texto}>
-        <Text>Call</Text>
-        <Text>Router</Text>
-        <Text>Share</Text>
-      </View>
+        <Icone nome="Call" url="https://cdn-icons-png.flaticon.com/128/3059/3059457.png"/>
+        <Icone nome="Router" url="https://cdn-icons-png.flaticon.com/128/2985/2985121.png"/>
+        <Icone nome="Share" url="https://cdn-icons-png.flaticon.com/128/3989/3989188.png"/>
     </View>
   )
 }
@@ -24,15 +28,22 @@ export default App = () => {
 const styles = StyleSheet.create = ({
   container: {
     flex:1,
-    justifyContent: "center",
-  },
-  texto: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-around',
+    backgroundColor: '#FFFFE0',
+    alignItems: 'center',
   },
   figura: {
+    width: 20,
+    height:20,
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+  },
+  espacamento: {
+    alignItems: 'center',
+  },
+  preenchimento: {
+    padding: 10,
   }
+
 
 })
