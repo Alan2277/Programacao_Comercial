@@ -6,7 +6,7 @@ const Imagem = () => {
     <View style = {styles.imagemStyle}>
       <Image 
         style = {styles.formatoImagem}
-        source={{uri: 'https://images.tcdn.com.br/img/img_prod/213069/bandeira_oficial_do_vasco_da_gama_256_x_180_cm_12283_1_e72ace27497f49365ce8998d7f08230e.jpg'}}
+        source={{uri: 'https://cdn.pixabay.com/photo/2019/03/19/19/38/vasco-4066744_640.png'}}
       />
     </View>
   )
@@ -60,11 +60,11 @@ const styles = StyleSheet.create = {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20
+    padding: 10
   },
   formatoImagem: {
-    width: 250,
-    height: 165,
+    width: 150,
+    height: 350,
   },
   tituloStyle: {
     flex:1,
