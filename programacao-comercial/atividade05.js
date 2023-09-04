@@ -1,6 +1,6 @@
 import { Text, View, StyleSheet, Image } from 'react-native';
 
-
+const imagem = 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Vasco_da_Gama2.png';
 const estrelaPreenchida = 'https://cdn-icons-png.flaticon.com/128/118/118669.png';
 const estrelaMetade = 'https://cdn-icons-png.flaticon.com/128/25/25662.png';
 const iconeTrofeu = 'https://cdn-icons-png.flaticon.com/128/7466/7466210.png';
@@ -13,7 +13,7 @@ const Imagem = () => {
     <View style={styles.styleImagem}>
       <Image
         style={styles.formatacaoImagem}
-        source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Vasco_da_Gama2.png' }}
+        source={{ uri: imagem }}
       />
     </View>
   )
