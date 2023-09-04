@@ -108,12 +108,34 @@ const TextoIcone = ({ text1, text2, text3 }) => {
   )
 }
 
+const Inf = ({icone, titulo, valor}) => (
+  <View style={{alignItems:"center"}}>
+     <Image
+        style={styles.formatacaoImagemIcone}
+        source={{ uri: icone }}
+      />
+      <Text>{titulo}</Text>
+      <Text>{valor}</Text>
+
+  </View>
+)
+
 const Informacoes = () => {
   return (
     <View>
       <ImagensIcones />
       <TextoIcone text1='Troféus' text2='Torcedores' text3='Estádio' />
       <TextoIcone text1='115' text2='13.292.800' text3='São Januário' />
+    </View>
+  )
+}
+
+const Informacoes2 = () => {
+  return (
+    <View style={{flexDirection:"row", justifyContent:"space-around"}}>
+      <Inf icone= {iconeTrofeu} titulo = "Troféus" valor = {115} />
+      <Inf icone= {iconeTrofeu} titulo = "Torcedor" valor = "São januario" />
+      <Inf icone= {iconeTrofeu} titulo = "Troféus" valor = {115} />
     </View>
   )
 }
@@ -125,7 +147,7 @@ export default App = () => {
       <Titulo />
       <Texto />
       <Avalicao />
-      <Informacoes />
+      <Informacoes2 />
     </View>
   )
 }
