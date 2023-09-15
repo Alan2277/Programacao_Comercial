@@ -1,58 +1,99 @@
-import {useState} from 'react';
-import {Text, Image, TextInput, View, StyleSheet } from 'react-native';
+import { useState } from 'react';
+import { Text, View, Image, TextInput, Button } from 'react-native';
 
+const imagemIFPI =
+  'https://pbs.twimg.com/profile_images/438771627854024704/Az4OY07a_400x400.png';
 
-const Imagem = ({url}) => {
-  return(
-    <View style = {styles.estiloImagem}>
-      <Image
-        style = {styles.formatacaoImagem}
-        source= {{uri: url}}
-      />
-    </View>
-  )
-}
+export default App = () => {
+  const [user, setUser] = useState('');
+  const [senha, setSenha] = useState('');
+  const [mensagem, setMensagem] = useState('');
 
-const TextoSuperior = () => {
+  const verificacaoLogin = () => {
+    if (user === 'IFPI' && senha === '123') {
+      setMensagem('ACESSO LIBERADO');
+    } else {
+      setMensagem('ACESSO NEGADO');
+    }
+  };
+
   return (
-    <View style = {styles.estiloTextoSuperior}>
-      <Text>
-        Login
-      </Text>
+    <View style={styles.container}>
+      <View style={styles.estiloImagem}>
+        <Image style={styles.formatacaoImagem} source={{ uri: imagemIFPI }} />
+      </View>
+
+      <View>
+        <TextInput
+          style={styles.estiloInput}
+          placeholder="Usuário"
+          onChangeText={(text) => setUser(text)}
+        />
+        <View style={styles.preenchimentoInput}>
+          <TextInput
+            style={styles.estiloInput}
+            placeholder="Senha"
+            onChangeText={(text) => setSenha(text)}
+            secureTextEntry
+          />
+        </View>
+      </View>
+      <View style={styles.estiloBotao}>
+        <Button title="Login" onPress={verificacaoLogin} />
+      </View>
+
+      <View style={styles.estiloInformacao}>
+        <Text>
+          Não possui conta?
+          <Text style={styles.textoInformacao}> Inscreva-se</Text>
+        </Text>
+      </View>
+
+      <View style={styles.estiloAlerta}>
+        <Text style={styles.textoAlerta}>{mensagem}</Text>
+      </View>
     </View>
-  )
-} 
+  );
+};
 
-
-export default App = () =>{
-  return(
-    <View style = {styles.container}>
-      <TextoSuperior/>
-      <Imagem url = 'https://olhonavaga.com.br/images?id=106494'/>
-    </View>
-
-  )
-}
-
-const styles = StyleSheet.create = {
+const styles = (StyleSheet.create = {
   container: {
-    flex:1,
-    backgroundColor: 'blue'
+    flex: 1,
+    backgroundColor: '#DCDCDC',
+    paddingHorizontal: 15,
+  },
+  estiloImagem: {
+    alignItems: 'center',
+    padding: 15,
   },
   formatacaoImagem: {
     width: 70,
     height: 70,
   },
-  estiloImagem: {
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'green'
-  },
-  estiloTextoSuperior: {
-    borderTop: 'black',
+  estiloInput: {
     borderWidth: 2,
-    justifyContent: 'center',
-    alignItems: 'center'
+    borderRadius: 5,
+    padding: 5,
   },
-}
+  preenchimentoInput: {
+    paddingTop: 10,
+  },
+  estiloBotao: {
+    paddingTop: 30,
+  },
+  estiloInformacao: {
+    alignItems: 'flex-end',
+  },
+  textoInformacao: {
+    color: 'blue',
+    fontWeight: 'bold',
+  },
+  estiloAlerta: {
+    alignItems: 'center',
+    paddingTop: 29,
+  },
+  textoAlerta: {
+    color: 'green',
+    fontWeight: 'bold',
+  },
+});
