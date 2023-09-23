@@ -57,8 +57,7 @@ const styles = StyleSheet.create = {
   container: {
     flex: 1,
     backgroundColor: '#DCDCDC',
-    flexDirection: 'column',
-  },
+},
   estiloTexto: {
     alignItems: 'center',
     padding: 10,
@@ -71,14 +70,14 @@ const styles = StyleSheet.create = {
   },
   estiloAlunos: {
     paddingBottom: 10,
-    paddingLeft: 4,
+    paddingLeft: 5,
   },
   formatacaoItems: {
      fontSize: 16,
      fontWeight: 'bold'
   },
   estiloImagem: {
-    padding:10
+    padding:30
   },
   formatacaoImagem:{
     height: 80,
