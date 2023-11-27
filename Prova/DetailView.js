@@ -9,16 +9,6 @@ const iconeDiminuir = 'https://cdn.icon-icons.com/icons2/510/PNG/512/minus-round
 function DetailView({ route }) {
     const item = route.params.burgue
 
-    const [valor,setValor] = useState(0)
-
-    function onPressAumentar() {
-        setValor(valor + 1)
-    }
-    function onPressDiminuir() {
-        if (valor > 0) {
-            setValor( valor - 1 )
-        }
-    }
     function valorComprar(){
         let valorHamburgue = 0
         return(
@@ -28,7 +18,7 @@ function DetailView({ route }) {
     function onPressAdicionar(){
         alert(
             "Pedido adicionado no carrinho!"
-        )
+        );
         setValor(0)
     }
     return (
@@ -51,16 +41,23 @@ function DetailView({ route }) {
             </View>
             <View style={styles.formatacaoViewPrincipalEntrega}>
                 <View style={styles.formatacaoEntrega}>
+                    <View style = {{flexDirection:'column', alignItems: 'center', justifyContent: 'center', paddingVertical: 4}}>
                     <View style={styles.formatacaoViewLocalidade}>
                         <Image source={{ uri: iconeLanchonete }} style={styles.formatacaoIcone} />
                     </View>
                     <Text style={styles.estiloNomeEntrega}>Mestre do Hambúrguer</Text>
-                    <Text style={styles.estiloSimbolo}>●</Text>
+                    </View>
+
+                    
+                    <View style = {{flexDirection:'column', alignItems: 'center', justifyContent: 'center', paddingVertical: 4}}>
                     <Image source={{ uri: iconeEntrega }} style={styles.formatacaoIcone}></Image>
-                    <Text style={styles.estiloSimbolo}>—</Text>
                     <Text style={styles.estiloNomeEntrega}>{item.tempo} min</Text>
-                    <Text style={styles.estiloSimbolo}>●</Text>
+                    </View>
+
+                    <View style = {{flexDirection:'column', alignItems: 'center', justifyContent: 'center', paddingVertical: 4}}>
+                    <Image source={{ uri: 'https://cdn-icons-png.flaticon.com/128/3444/3444344.png' }} style={styles.formatacaoIcone}></Image>
                     <Text style={styles.estiloValorEntrega}>R$ 2,99</Text>
+                    </View>
                 </View>
             </View>
 
@@ -130,7 +127,7 @@ const styles = StyleSheet.create({
     },
     formatacaoViewPrincipalEntrega: {
         paddingTop: 15,
-        alignItems: 'center',
+        paddingHorizontal:22
     },
     formatacaoEntrega: {
         flexDirection: 'row',
@@ -138,7 +135,7 @@ const styles = StyleSheet.create({
         borderRadius: 7,
         padding: 5,
         paddingHorizontal: 6,
-        alignItems: 'center'
+        justifyContent: 'space-around',
     },
     formatacaoViewLocalidade: {
         flexDirection: 'column',
