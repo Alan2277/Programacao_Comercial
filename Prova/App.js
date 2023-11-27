@@ -18,4 +18,4 @@ export default function App() {
 }
 // <NavigationContainer>: demonstra gerenciar o estado de navegação e vincular as rotas de navegações (Componente PAI)//
 //<Stack.Navigator> : Informando que a navgação é realizada por meio do tipo stack(emplinhamento) de páginas//
-// <Stac.Screen> : Demonstra que a leitura da navegação conforme as suas descrições, de nome e componente//
+// <Stack.Screen> : Demonstra que a leitura da navegação conforme as suas descrições, de nome e componente//
